@@ -1,0 +1,20 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  console.log("get homepage");
+  res.render('index', { title: 'Homepage' });
+});
+
+router.get('/index', function(req, res, next) {
+  console.log("get homepage");
+  res.render('index', { title: 'Homepage' });
+});
+
+router.get('/searchJoke', function(req, res, next) {
+  console.log("search joke api page");
+  res.render('searchJoke', { title: 'searchJoke' });
+});
+
+module.exports = router;
