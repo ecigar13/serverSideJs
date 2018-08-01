@@ -28,14 +28,23 @@ function searchJoke() {
 
 
 function loadJoke() {
+  /*send the request for a random joke and display it*/
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.status == 200 && this.readyState == 4) {
+
       console.log(this.responseText);
       document.getElementById("jokeId").innerHTML = JSON.parse(this.responseText).id;
       document.getElementById("jokeData").innerHTML = JSON.parse(this.responseText).joke;
       tempJoke = JSON.parse(this.responseText).joke;
       document.getElementsByTagName("aside")[0].setAttribute("class", "DOMFontResize");
+
+      /*This creates a list node, apply the joke to the node and append it to the myList html list*/
+      var node = document.createElement("li");
+      var textnode = document.createTextNode(tempJoke);
+      node.appendChild(textnode);
+      document.getElementById("myList").appendChild(node);
+      tempJoke = 'Nothing to append';
     }
   };
   xhttp.open("GET", "https://icanhazdadjoke.com/", true);
@@ -43,14 +52,6 @@ function loadJoke() {
   xhttp.send();
 }
 
-/* Using this global variable so that the addList() function can access the variables defined in loadJoke()*/
-var tempJoke = '';
-
-/*This function will allow me to create a list node, apply the joke to the node and append it to the myList html list*/
 function addList() {
-  var node = document.createElement("li");
-  var textnode = document.createTextNode(tempJoke);
-  node.appendChild(textnode);
-  document.getElementById("myList").appendChild(node);
-  tempJoke = 'Nothing to append';
+
 }
