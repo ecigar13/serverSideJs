@@ -1,25 +1,27 @@
-function searchJoke() {
-  /* Using concatination to obtain the full website, using the method described on the API */
-  var x = document.getElementById("myText").value;
-  var y = "https://icanhazdadjoke.com/j/"
-  var z = y.concat(x);
-  /*I can assign my varible z - which contains the location of the website into the "webLink" Id tag*/
-  document.getElementById("webLink").innerHTML = z;
+/* Using concatination to obtain the full website, using the method described on the API */
+function searchJokeById() {
+  //this contains the id of the joke. 
+  var element = document.getElementById("myText").value;
+  var link = "https://icanhazdadjoke.com/j/"
+  link = link.concat(element);
+  //assign the link as a link to the joke based on id
+  document.getElementById("webLink").innerHTML = link;
 
 
-  /*To interact with the API, I am using an XMLHttpRequest to asynchronously to make a GET call to my API to accept the JSON file, then proceed to pull the Joke Data from the JSON object using DOM methods*/
+  //send the link above to the API and display the response.
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.status == 200) {
       console.log(this.responseText);
       document.getElementById("jokeData").innerHTML = JSON.parse(this.responseText).joke;
-      /* to resize the font size of the joke, I need use this DOM method so the CSS can give it a style*/
+      //resize the element to the css style
       document.getElementsByTagName("aside")[0].setAttribute("class", "DOMFontResize");
-      /*This will allow me to set the variable z as a hyperlink in the html*/
-      document.getElementById("webLink").innerHTML = z.link(z)
+      document.getElementById("webLink").innerHTML = link.link(link)
+    } else {
+      console.log("error" + this.status);
     }
   };
-  xhttp.open("GET", z, true);
+  xhttp.open("GET", link, true);
   xhttp.setRequestHeader('Accept', 'application/json');
   xhttp.send();
 }
@@ -27,8 +29,8 @@ function searchJoke() {
 
 
 
-function loadJoke() {
-  /*send the request for a random joke and display it*/
+/*send the request for a random joke and display it*/
+function getRandomJoke() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.status == 200 && this.readyState == 4) {
@@ -50,8 +52,4 @@ function loadJoke() {
   xhttp.open("GET", "https://icanhazdadjoke.com/", true);
   xhttp.setRequestHeader('Accept', 'application/json');
   xhttp.send();
-}
-
-function addList() {
-
 }

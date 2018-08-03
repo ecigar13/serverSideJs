@@ -33,4 +33,11 @@ router.get('/submitJoke', function (req, res, next) {
   });
 });
 
+router.get('/about', function (req, res, next) {
+  console.log("about this site");
+  res.render('about', {
+    title: 'about'
+  });
+});
+
 module.exports = router;
