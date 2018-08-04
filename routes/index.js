@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
-
-
 /* GET home page. */
 router.get('/', function (req, res, next) {
   console.log("get homepage");
@@ -40,4 +37,10 @@ router.get('/about', function (req, res, next) {
   });
 });
 
+router.get('/todoList', function (req, res, next) {
+  console.log("get todo list");
+  res.render('index', {
+    title: 'todoList'
+  });
+});
 module.exports = router;
