@@ -37,6 +37,13 @@ router.get('/about', function (req, res, next) {
   });
 });
 
+router.get('/contact', function (req, res, next) {
+  console.log("contact information");
+  res.render('contact', {
+    title: 'contact'
+  });
+});
+
 router.get('/todoList', function (req, res, next) {
   console.log("get todo list");
   res.render('index', {
