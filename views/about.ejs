@@ -18,10 +18,13 @@
     font-size: 16 pt;
   }
 </style>
+<header>
+  <!--navigation bar -->
+  <% include components/header.ejs %>
+</header>
 
 <body>
-  <!--navigation bar -->
-  <% include topnav.ejs %>
+
 
   <div class="container" style="height: 90vh">
     <div style="padding: 50pt">
@@ -43,5 +46,9 @@
   </div>
 
 </body>
+
+<footer>
+  <% include components/footer.ejs %>
+</footer>
 
 </html>

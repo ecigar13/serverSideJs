@@ -8,17 +8,23 @@
   <% include script.ejs %>
 </head>
 
-<body>
+<header>
   <!--navigation bar -->
-  <% include topnav.ejs %>
-  
-  <!--There isn't anything in the API to allow us to submit a joke, so I have embedded the original webpage to submit a joke using iframe-->
-  <div class="container">
-    <iframe src="https://icanhazdadjoke.com/submit">
-      <p> Your browser does not support iframes. </p>
-    </iframe>
-  </div>
+  <% include components/header.ejs %>
+</header>
+
+<body>
+
+    <!--There isn't anything in the API to allow us to submit a joke, so I have embedded the original webpage to submit a joke using iframe-->
+    <div class="container">
+      <iframe src="https://icanhazdadjoke.com/submit">
+        <p> Your browser does not support iframes. </p>
+      </iframe>
+    </div>
 
 </body>
+<footer>
+  <% include components/footer.ejs %>
+</footer>
 
 </html>
