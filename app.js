@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -37,5 +39,20 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+var production = process.env.NODE_ENV === 'production'
+if(!production) {
+  var chokidar = require('chokidar')
+  var watcher = chokidar.watch('./public')
+
+  watcher.on('ready', function() {
+    watcher.on('all', function() {
+      console.log("Clearing /dist/ module cache from server")
+      Object.keys(require.cache).forEach(function(id) {
+        if (/[\/\\]dist[\/\\]/.test(id)) delete require.cache[id]
+      })
+    })
+  })
+}
 
 module.exports = app;

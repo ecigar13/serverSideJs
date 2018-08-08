@@ -48,3 +48,5 @@ function getRandomJoke(){
   xhttp.setRequestHeader('Accept', 'application/json')
   xhttp.send()
 }
+
+
