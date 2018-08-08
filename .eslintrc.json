@@ -1,0 +1,37 @@
+{
+  "extends": "standard",
+  "parser": "babel-eslint",
+  "plugins": [
+    "html"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+
+  "rules": {
+
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+
+    "space-before-blocks": ["error", {
+      "functions": "never",
+      "keywords": "always",
+      "classes": "never"
+    }],
+    "no-unused-vars": ["error", {
+      "vars": "local",
+      "args": "none",
+      "ignoreRestSiblings": false
+    }],
+    "indent": ["error", 2]
+  }
+}
