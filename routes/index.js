@@ -37,17 +37,52 @@ router.get('/about', function (req, res, next){
   })
 })
 
-router.get('/contact', function (req, res, next){
-  console.log('contact information')
-  res.render('contact', {
-    title: 'contact'
+router.get('/contributor', function (req, res, next){
+  console.log('contributor information')
+  res.render('contributor', {
+    title: 'contributor'
   })
 })
 
 router.get('/todoList', function (req, res, next){
-  console.log('get todo list')
+  console.log('todoListReact')
   res.render('todoList', {
-    title: 'todoList'
+    title: 'todoListReact'
+  })
+})
+
+router.get('/todoAngular', function (req, res, next){
+  console.log('todoAngular')
+  res.render('todoAngular', {
+    title: 'todoAngular'
+  })
+})
+
+router.get('/khoa', function (req, res, next){
+  console.log('khoa')
+  res.render('./contributor/khoa', {
+    title: 'khoa'
+  })
+})
+
+router.get('/hung', function (req, res, next){
+  console.log('hung')
+  res.render('./contributor/hung', {
+    title: 'hung'
+  })
+})
+
+router.get('/vanAnh', function (req, res, next){
+  console.log('vanAnh')
+  res.render('./contributor/vanAnh', {
+    title: 'vanAnh'
+  })
+})
+
+router.get('/peter', function (req, res, next){
+  console.log('peter')
+  res.render('./contributor/peter', {
+    title: 'peter'
   })
 })
 module.exports = router

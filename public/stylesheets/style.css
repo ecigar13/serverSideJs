@@ -3,6 +3,12 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  font-size: 26 pt;
+}
+
+p,
 a {
   color: #00B7FF;
+  font-size: 16 pt;
 }
