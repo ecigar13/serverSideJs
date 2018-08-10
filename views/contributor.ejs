@@ -15,52 +15,32 @@
   </header>
   <div class='container'>
     <div class='inner-content'>
-      <h2>Contributors</h2>
+      <h1>Contributors</h1>
       <div ng-app="contributorRouting" ng-controller="contributorController">
-        <div ng-repeat="p in member">
-          <p>{{p}}</p>
+        <div ng-repeat="a in members">
+          <p>
+            <h2>{{a.name}}</h2>
+          </p>
+          <p>
+            <a href="{{a.github}}">{{a.github}}</a>
+          </p>
+          <p>
+            <a href="{{a.facebook}}">{{a.facebook}}</a>
+          </p>
+          <p>
+            <a href="{{a.linkedin}}">{{a.linkedin}}</a>
+          </p>
+          <p>
+            <a href="{{a.phone}}">{{a.phone}}</p>
+          <p>
+            <a href="mailto:{{a.email}}" data-rel="external">{{a.email}}</a>
+          </p>
+          <p>{{a.biography}}</p>
+
         </div>
-        <div ng-repeat="a in m">
-            <p>{{a.name}}</p>
-          </div>
 
-          <!--<p><b>
-            <a href="{{p.link}}">{{p.}}</a>
-          </b>
-          <br>Linkedin:
-          <a href="{{p.linkedin}}">{{p.linkedin}}</a>
-          <br>Cell: {{phone}}
-          <br>Facebook:
-          <a href="{{facebook}}">{{facebook}}</a>
-          <br>Github:
-          <a href="{{github}}">{{github}}</a>
-          <p>{{biography}}</p> 
-        </p>-->
-        
 
-        <p>
-          <b>
-            <a href="/hung">Hung (Randy) Vuong</a>
-          </b>
-          <br> hungvuong816@gmail.com
-          <br> Cell: 469-358-9713
-          <br>
-          <a href='https://www.linkedin.com/in/hung-vuong-0367b062/'>Linkedin</a>
-        </p>
-        <p>
-          <b>
-            <a href="/peter">Peter Tran</a>
-          </b>
-          <br> Email:
-          <br> Cell: 469-693-0637
-        </p>
-        <p>
-          <b>
-            <a href="/vanAnh">Cynthia Nguyen</a>
-          </b>
-          <br>
-          <a href="https://www.facebook.com/AnhCynthiaNguyen94">Facebook</a>
-        </p>
+
       </div>
     </div>
 

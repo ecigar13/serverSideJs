@@ -46,7 +46,7 @@ iframe {
   margin-right: auto;
   background-color: #d9dfe9;
   width: 70%;
-  height: 90vh;
+  height: auto;
 }
 
 .inner-content{
